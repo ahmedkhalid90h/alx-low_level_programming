@@ -28,4 +28,4 @@ int main(void)
 	printf("%d is %s\n", n, "zero");
 	}
 	return (0);
-} 
+}
