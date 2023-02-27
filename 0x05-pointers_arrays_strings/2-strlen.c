@@ -2,7 +2,7 @@
 
 /**
  * main - check the code
- *  _strlen: counts the number of characters
+ *  _strlen - counts the number of characters
  *  @s:string character
  * Return: Always 0.
  */
