@@ -1,13 +1,11 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - check the code
- *  _puts - counts the number of characters
- *  @s:string character
- * Return: Always 0.
- */
-
-void _puts(char *s)
+ * print_rev - prints a string, in reverse, followed by a new line
+ * @s: pointer to a string
+ * Return: void
+**/
+void print_rev(char *s)
 {
 	int i = 0;
 
@@ -16,8 +14,8 @@ void _puts(char *s)
 	i--;
 	while (i >= 0)
 	{
-		putchar(s[i]);
+		_putchar(s[i]);
 		i--;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
