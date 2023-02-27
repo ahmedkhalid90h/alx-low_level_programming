@@ -3,7 +3,7 @@
 /**
  * main - check the code
  *  _puts - counts the number of characters
- *  @str:string character
+ *  @s:string character
  * Return: Always 0.
  */
 
