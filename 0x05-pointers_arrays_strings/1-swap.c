@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
-* reset_to_98 -  takes a pointer to an int
-* @n: take an int
-* Return: int
-**/
+ * main - check the code
+ *  @a:a value in aco
+ *  @b:b value in a
+ * Return: Always 0.
+ */
 
 void swap_int(int *a, int *b)
 {
