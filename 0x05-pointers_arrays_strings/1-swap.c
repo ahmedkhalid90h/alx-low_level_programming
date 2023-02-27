@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * main - check the code
- *  swap_int: replacing a to b
- *  @a:a value in aco
- *  @b:b value in a
- * Return: Always 0.
- */
+ * swap_int - swaps the values of two integers
+ * @a: pointer to an int
+ * @b: pointer to an int
+ * Return: void
+**/ 
 void swap_int(int *a, int *b)
 {
 int aco = *a;
