@@ -31,7 +31,7 @@ _putchar(str[i]);
 }
 else
 {
-for (int i = _strlen(str) / 2 + 1;str[i] != '\0'; i++)
+for (int i = ((_strlen(str) / 2) + 1);str[i] != '\0'; i++)
 {
 _putchar(str[i]);
 }
