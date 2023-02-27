@@ -7,7 +7,6 @@
  *  @b:b value in a
  * Return: Always 0.
  */
-
 void swap_int(int *a, int *b)
 {
 int aco = *a;
