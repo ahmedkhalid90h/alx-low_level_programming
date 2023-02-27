@@ -2,6 +2,7 @@
 
 /**
  * main - check the code
+ * swap_int: replacing a to b
  *  @a:a value in aco
  *  @b:b value in a
  * Return: Always 0.
