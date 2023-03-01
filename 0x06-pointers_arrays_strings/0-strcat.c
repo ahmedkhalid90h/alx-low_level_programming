@@ -2,8 +2,8 @@
 #include <time.h>
 
 /**
- *  @dest:is s1 value is "Hello " and i return "Hello world"
- *  @src:is s2 value is World
+@dest:is s1 value is "Hello " and i return "Hello world"
+@src:is s2 value is World
  * Return: Always 0.
  */
 char *_strcat(char *dest, char *src)
