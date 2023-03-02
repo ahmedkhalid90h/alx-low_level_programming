@@ -2,9 +2,8 @@
 
 /**
 * _strcmp - a function that concatenates two strings
- * @dest: string
- * @src: string
- * @n:integer
+ * @s1: string
+ * @s2: string
  * Return: string
  */
 int _strcmp(char *s1, char *s2)
