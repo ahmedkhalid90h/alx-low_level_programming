@@ -1,22 +1,23 @@
 #include "main.h"
 
 /**
-* _strcat - a function that concatenates two strings
+* _strcmp - a function that concatenates two strings
  * @dest: string
  * @src: string
  * @n:integer
  * Return: string
  */
-char *_strncat(char *dest, char *src, int n)
+int _strcmp(char *s1, char *s2)
 {
-char *ptr = dest;
 int i;
-while (*ptr != '\0')
-*ptr++;
-while (*src != '\0' && n-- >= 0)
+
+for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
 {
-*ptr++ = *src++;
+if (s1[i] != s2[i])
+{
+break;
 }
-*ptr = '\0';
-return (dest);
+}
+
+return s1[i] - s2[i];
 }
