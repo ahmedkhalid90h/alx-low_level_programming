@@ -9,11 +9,14 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-char *trs = dest;
-while (*trs!='\0')
-trs++;
-while (*src!='\0'&&n-->0)
-*trs++ = *src++;
-*trs='\0';
-return(dest);
+char *ptr = dest;
+int i;
+while (*ptr != '\0')
+*ptr++;
+while (*src != '\0' && n-- >= 0)
+{
+*ptr++ = *src++;
+}
+*ptr = '\0';
+return (dest);
 }
