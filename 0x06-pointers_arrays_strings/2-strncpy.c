@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strncat - Copies memory area
+ * _strncpy - Copies memory area
  *
  * @dest: where to copy the memory to
  * @n: the number of bytes
