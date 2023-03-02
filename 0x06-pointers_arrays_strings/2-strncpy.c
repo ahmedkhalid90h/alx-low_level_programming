@@ -9,13 +9,18 @@
  *
  * Return: a pointer to @dest
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-char *trs = dest;
-while (*trs!='\0')
-trs++;
-while (*src!='\0'&&n-->0)
-*trs++ = *src++;
-*trs='\0';
-return(dest);
+int i;
+
+for (i = 0; i < n && src[i] != '\0'; i++)
+{
+dest[i] = src[i];
+}
+
+while (i < n)
+{
+dest[i++] = '\0';
+}
+return dest;
 }
