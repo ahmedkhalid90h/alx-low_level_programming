@@ -12,5 +12,5 @@ p = &n;
 *(p = &a[2] - 1) = 98;
 
 printf("a[2] = %d\n", a[2]);
-return 0;
+return (0);
 }
