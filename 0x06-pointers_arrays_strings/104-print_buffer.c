@@ -1,49 +1,36 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_buffer - prints buffer
- * @b: buffer
- * @size: size
- * Return: void
+ * print_buffer - Prints a buffer
+ * @b: The character buffer
+ * @size: The number of bytes to print from the character buffer
  */
-
 void print_buffer(char *b, int size)
 {
-int o, j, i;
+int idx, col;
 
-o = 0;
-
-if (size <= 0)
+for (idx = 0; idx < size; idx += 10)
 {
-printf("\n");
-return;
-}
-while (o < size)
+printf("%08x: ", idx);
+for (col = idx; col < idx + 10; col += 2)
 {
-j = size - o < 10 ? size - o : 10;
-printf("%08x: ", o);
-for (i = 0; i < 10; i++)
-{
-if (i < j)
-printf("%02x", *(b + o + i));
+if (col < size)
+printf("%02x", *(b + col));
 else
-printf("  ");
-if (i % 2)
+printf("%2c", ' ');
+if (col + 1 < size)
+printf("%02x", *(b + col + 1));
+else
+printf("%2c", ' ');
+putchar(' ');
+}
+for (col = idx; col < idx + 10; col++)
 {
-printf(" ");
+if (col < size)
+putchar(*(b + col) < ' ' ? '.' : *(b + col));
 }
+putchar('\n');
 }
-for (i = 0; i < j; i++)
-{
-int c = *(b + o + i);
-
-if (c < 32 || c > 132)
-{
-c = '.';
-}
-printf("%c", c);
-}
-printf("\n");
-o += 10;
-}
+if (size <= 0)
+putchar('\n');
 }
