@@ -1,31 +1,44 @@
-0. isupper
-Write a function that checks for uppercase character.
+# 0x06-pointers_arrays_strings
 
-Prototype: int _isupper(int c);
-Returns 1 if c is uppercase
-Returns 0 otherwise
+## 0. strcat
 
-1. isdigit
-Write a function that checks for a digit (0 through 9).
+Write a function that concatenates two strings.
 
-Prototype: int _isdigit(int c);
-Returns 1 if c is a digit
-Returns 0 otherwise
+Prototype: `char *_strcat(char *dest, char *src);`
+This function appends the src string to the dest string, overwriting the terminating null byte (\0) at the end of dest, and then adds a terminating null byte
+Returns a pointer to the resulting string dest
+FYI: The standard library provides a similar function: strcat. Run man strcat to learn more.
 
-2. Collaboration is multiplication
-Write a function that multiplies two integers.
+```bash
+julien@ubuntu:~/0x06$ cat 0-main.c
+#include "main.h"
+#include <stdio.h>
 
-Prototype: int mul(int a, int b);
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char s1[98] = "Hello ";
+    char s2[] = "World!\n";
+    char *ptr;
 
-3. The numbers speak for themselves
-Write a function that prints the numbers, from 0 to 9, followed by a new line.
-
-Prototype: void print_numbers(void);
-You can only use _putchar twice in your code
-
-4. I believe in numbers and signs
-Write a function that prints the numbers, from 0 to 9, followed by a new line.
-
-Prototype: void print_most_numbers(void);
-Do not print 2 and 4
-You can only use _putchar twice in your code
+    printf("%s\n", s1);
+    printf("%s", s2);
+    ptr = _strcat(s1, s2);
+    printf("%s", s1);
+    printf("%s", s2);
+    printf("%s", ptr);
+    return (0);
+}
+julien@ubuntu:~/0x06$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-strcat.c -o 0-strcat
+julien@ubuntu:~/0x06$ ./0-strcat 
+Hello 
+World!
+Hello World!
+World!
+Hello World!
+julien@ubuntu:~/0x06$ 
+```

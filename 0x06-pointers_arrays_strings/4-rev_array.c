@@ -1,19 +1,18 @@
 #include "main.h"
-
 /**
-* reverse_array - a function that concatenates two strings
- * @a: num
- * @n: num
- * Return: string
+ * reverse_array - reverse array
+ * @a:array
+ * @n:integer
+ * Return:void
  */
 void reverse_array(int *a, int n)
 {
-int i, j, tmp;
+int i, c;
 
-for (i = 0, j = n - 1; i < j; i++, j--)
-{
-tmp = a[i];
-a[i] = a[j];
-a[j] = tmp;
-}
+for (i = 0; (i < (n - 1) / 2); i++)
+	{
+	c = a[i];
+	a[i] = a[n - 1 - i];
+	a[n - 1 - i] = c;
+	}
 }
