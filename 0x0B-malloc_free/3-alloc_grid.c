@@ -13,20 +13,45 @@
 
 int **alloc_grid(int width, int height)
 {
-char *concat;
-int i,j,lenTotal,len1,len2;
-if (s1[len1] != '\0')
-s1 = "";
-if (s2[len2] != '\0')
-s2 = "";
-lenTotal = len1 + len2;
-concat =(char *)malloc(sizeof(char) * (lenTotal + 1));
-if (concat == NULL)
-return (NULL);
-for ( i;i < len1;i++)
-concat[i] = s1[i];
-for ( j;j < len2;j++,i++)
-concat[i++] = s2[j];
-concat = '\0';
-return (concat);
+
+}
+void print_grid(int **grid, int width, int height)
+{
+    int w;
+    int h;
+
+    h = 0;
+    while (h < height)
+    {
+        w = 0;
+        while (w < width)
+        {
+            printf("%d ", grid[h][w]);
+            w++;
+        }
+        printf("\n");
+        h++;
+    }   
+}
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int **grid;
+
+    grid = alloc_grid(6, 4);
+    if (grid == NULL)
+    {
+        return (1);
+    }
+    print_grid(grid, 6, 4);
+    printf("\n");
+    grid[0][3] = 98;
+    grid[3][4] = 402;
+    print_grid(grid, 6, 4);
+    return (0);
 }
