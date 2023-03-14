@@ -23,9 +23,9 @@ lenTotal = len1 + len2;
 concat =(char *)malloc(sizeof(char) * (lenTotal + 1));
 if (concat == NULL)
 return (NULL);
-for ( i;i < len1;i++)
+for (i; i < len1; i++)
 concat[i] = s1[i];
-for ( j;j < len2;j++,i++)
+for (j; j < len2; j++, i++)
 concat[i++] = s2[j];
 concat = '\0';
 return (concat);
