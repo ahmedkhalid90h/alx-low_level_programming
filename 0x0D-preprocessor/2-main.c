@@ -5,7 +5,7 @@
  * _main - return name of file
 */
 
-int main()
+int main(void)
 {
-    printf("%s\n",__FILE__);
+printf("%s\n", __FILE__);
 }
