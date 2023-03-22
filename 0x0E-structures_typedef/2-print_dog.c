@@ -7,7 +7,7 @@
  *
  * Return: void
  */
-void print_dog(struct dog *d)
+void print	(struct dog *d)
 {
 	if (d != NULL)
 	{
