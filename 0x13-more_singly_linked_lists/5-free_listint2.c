@@ -3,7 +3,6 @@
 
 /**
  * free_listint2 - Realease the memory allocated for a list
- *
  * @head: A pointer to the first node of the list to free
  *  Return: nothing
  */
