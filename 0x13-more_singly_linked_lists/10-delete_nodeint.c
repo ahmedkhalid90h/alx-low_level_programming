@@ -7,12 +7,12 @@
  * *insert_nodeint_at_index - Realease the memory allocated for a list
  *
  * @head: A pointer to the first node of the list to free
- * @idx: get integer number
- * @n: number the first node
+ * @index: get integer number
+ * 
  * Return: node
  */
 
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 listint_t *cha;
 listint_t *new_node;
