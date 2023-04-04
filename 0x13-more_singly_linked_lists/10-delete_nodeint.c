@@ -4,11 +4,10 @@
 #include <string.h>
 
 /**
- * *insert_nodeint_at_index - Realease the memory allocated for a list
+ * *delete_nodeint_at_index - Realease the memory allocated for a list
  *
  * @head: A pointer to the first node of the list to free
  * @index: get integer number
-
  * Return: node
  */
 
