@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * pop_listint - Realease the memory allocated for a list
+ * get_nodeint_at_index - Realease the memory allocated for a list
  *
  * @head: A pointer to the first node of the list to free
  */
