@@ -9,7 +9,7 @@
  * @head: A pointer to the first node of the list to free
  */
 
-int sum_listint(listint_t *head)
+int *sum_listint(listint_t *head)
 {
 unsigned int i;
 i = 0;
