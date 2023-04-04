@@ -9,23 +9,13 @@
  * Return: number of nodes
  */
 
-listint_t *add_nodeint_end(listint_t **head, const int n)
+void free_listint(listint_t *head)
 {
-listint_t *new_node,*tmp;
-
-new_node = malloc(sizeof(listint_t));
-if (new_node == NULL)
-return (NULL);
-
-if (*head == NULL)
+if (head)
 {
-*head = new_node;
-return (new_node);
+free_list(head->next);
+if (head->next)
+free_listint(head->next);
+free(head);
 }
-tmp = *head;
-while (tmp->next)
-tmp = tmp->next;
-tmp->next = new_node;
-
-return (new_node);
 }
