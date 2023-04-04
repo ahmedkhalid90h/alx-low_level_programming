@@ -1,4 +1,4 @@
-#include "listint.h"
+#include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -15,7 +15,7 @@ size_t count = 0;
 
 while (h)
 {
-printf("%d\n",h->n);
+_putchar(h->n);
 count++;
 h = h->next;
 }
