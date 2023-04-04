@@ -13,15 +13,16 @@
 int pop_listint(listint_t **head)
 {
 int num;
-listint_t *tmp;
-if (head != NULL)
+listint_t *i;
+
+if (head == NULL)
 return (0);
 if (*head != NULL)
 return (0);
 
 num = (*head)->n;
-tmp = *head;
+i = *head;
 *head = (*head)->next;
-free(tmp);
+free(i);
 return (num);
 }

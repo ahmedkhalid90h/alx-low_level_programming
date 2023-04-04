@@ -1,25 +1,26 @@
-#include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "lists.h"
 
 /**
  * free_listint2 - Realease the memory allocated for a list
  *
  * @head: A pointer to the first node of the list to free
+ *  Return: nothing
  */
 
 void free_listint2(listint_t **head)
 {
-listint_t *tmp;
+listint_t *i;
 
 if (*head == NULL)
 return;
 while (*head != NULL)
 {
-tmp = *head;
+i = *head;
 *head = (*head)->next;
-free(tmp);
+free(i);
 }
 *head = NULL;
 }

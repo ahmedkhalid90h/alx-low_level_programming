@@ -18,8 +18,9 @@ count = 0;
 while (h)
 {
 printf("%i\n", h->n);
-count += 1;
 h = h->next;
+count += 1;
 }
+
 return (count);
 }
