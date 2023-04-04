@@ -10,15 +10,13 @@
 
 int pop_listint(listint_t **head)
 {
+unsigned int num;
 listint_t *tmp;
-
-if (*head == NULL)
-return;
-while(*head != NULL)
-{
+if (head != NULL || *head != NULL)
+return (0);
 tmp = *head;
-*head = (*head)->next;
+num = tmp->n;
+*head = (* head)->next;
 free(tmp);
-}
-*head = NULL;
+return(num);
 }
