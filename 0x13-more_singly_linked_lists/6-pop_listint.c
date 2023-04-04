@@ -7,6 +7,7 @@
  * *pop_listint - a function delete head of the list
  *
  * @head: A pointer to the first node of the list to free
+ * Return: int
  */
 
 int pop_listint(listint_t **head)
