@@ -8,7 +8,7 @@
  *
  * @head: A pointer to the first node of the list to free
  * @index: get integer number
- * 
+
  * Return: node
  */
 
