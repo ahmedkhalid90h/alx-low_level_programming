@@ -14,28 +14,30 @@
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-listint_t *cha;
-listint_t *new_node;
+listint_t *cha, *c;
+unsigned int i;
+i = 0;
+
+if (head == NULL || *head == NULL)
+return (-1);
+
 cha = *head;
-new_node = malloc(sizeof(listint_t));
+c = NULL;
 
-if (new_node == NULL)
-return (NULL);
-
-new_node->n = n;
-
-if (idx == 0)
+for (; i < index; i++)
 {
-new_node->next = *head;
-*head = new_node;
-return (new_node);
+if (cha == NULL)
+return (-1);
+c = cha;
+cha = cha->next;
 }
 
-for (; idx != 1; idx--)
-cha = cha->next;
+if (c == NULL)
+*head = cha->next;
+else
+c->next = cha->next;
 
-new_node->next = cha->next;
-cha->next = new_node;
+free(cha);
 
-return (new_node);
+return (1);
 }
