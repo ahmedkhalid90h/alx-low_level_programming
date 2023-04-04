@@ -22,5 +22,5 @@ num = (*head)->n;
 tmp = *head;
 *head = (*head)->next;
 free(tmp);
-return(num);
+return (num);
 }
