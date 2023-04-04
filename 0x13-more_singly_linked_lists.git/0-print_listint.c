@@ -3,9 +3,11 @@
 #include <stdio.h>
 
 /**
- * @print_listint:fun return number of node
- * @count:count number of node
-*/
+ * print_listint - prints all the elements of a linked list
+ * @h: linked list of type listint_t to print
+ *
+ * Return: number of nodes
+ */
 
 size_t print_listint(const listint_t *h)
 {
