@@ -1,7 +1,5 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdlib.h>
-#include <string.h>
 
 /**
  * *insert_nodeint_at_index - Realease the memory allocated for a list
