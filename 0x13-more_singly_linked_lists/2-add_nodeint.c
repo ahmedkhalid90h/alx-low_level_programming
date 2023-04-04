@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
- * print_listint - prints all the elements of a linked list
- * @h: linked list of type listint_t to print
- *
- * Return: number of nodes
+ * add_nodeint - add a new node at beginning of a list_t list.
+ * @head: head of a list_t list.
+ * @n: value to insert into element.
+ * Return: the number of nodes.
  */
 
 listint_t *add_nodeint(listint_t **head, const int n)

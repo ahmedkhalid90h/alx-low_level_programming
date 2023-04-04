@@ -3,9 +3,8 @@
 #include <stdio.h>
 
 /**
- * free_listint - Realease the memory allocated for a list
- *
- * @head: A pointer to the first node of the list to free
+ * myStartupFun - Apply the constructor attribute to myStartupFun() so that it
+ *   is executed before main()
  */
 
 void free_listint(listint_t *head)
