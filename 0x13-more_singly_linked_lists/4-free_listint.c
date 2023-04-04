@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * free_listint - Realease the memory allocated for a list
@@ -10,11 +11,11 @@
 
 void free_listint(listint_t *head)
 {
-if (head)
+listint_t *cur;
+while (head != NULL)
 {
-free_list(head->next);
-if (head->next)
-free_listint(head->next);
-free(head);
+cur = head;
+head = head->next;
+free(cur);
 }
 }

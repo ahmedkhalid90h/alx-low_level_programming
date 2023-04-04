@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * pop_listint - Realease the memory allocated for a list
@@ -10,13 +11,13 @@
 
 int pop_listint(listint_t **head)
 {
-unsigned int num;
+int num;
 listint_t *tmp;
 if (head != NULL || *head != NULL)
 return (0);
-tmp = *head;
 num = tmp->n;
-*head = (* head)->next;
+tmp = *head;
+*head = (*head)->next;
 free(tmp);
 return(num);
 }
