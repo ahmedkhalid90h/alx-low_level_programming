@@ -1,41 +1,33 @@
-#include "lists.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
- * *delete_nodeint_at_index - Realease the memory allocated for a list
- *
- * @head: A pointer to the first node of the list to free
- * @index: get integer number
- * Return: node
- */
+* *reverse_listint - a function that reverse listint_ t linked list
+* @head: a head of linked_list
+* Return: a pointer to the first node of the reversed list
+**/
 
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
+listint_t *reverse_listint(listint_t **head)
 {
-listint_t *cha, *c;
-unsigned int i;
-i = 0;
+listint_t *tmp, *tmp2;
+
+tmp = NULL;
+tmp2 = NULL;
 
 if (head == NULL || *head == NULL)
-return (-1);
+return (NULL);
 
-cha = *head;
-c = NULL;
-
-for (; i < index; i++)
+while (*head != NULL)
 {
-if (cha == NULL)
-return (-1);
-c = cha;
-cha = cha->next;
+tmp2 = (*head)->next;
+(*head)->next = tmp;
+tmp = *head;
+*head = tmp2;
 }
 
-if (c == NULL)
-*head = cha->next;
-else
-c->next = cha->next;
+*head = tmp;
 
-free(cha);
-
-return (1);
+return (*head);
 }
