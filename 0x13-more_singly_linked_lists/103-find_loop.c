@@ -1,42 +1,32 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdlib.h>
-#include <string.h>
 
 /**
- * *delete_nodeint_at_index - Realease the memory allocated for a list
+ * find_listint_loop - finds the loop in a linked list.
+ * @head: pointer to the beginning of the list
  *
- * @head: A pointer to the first node of the list to free
- * @index: get integer number
- * Return: node
+ * Return: address of the node where the loop starts or NULL if there's no loop
  */
-
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
+listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *cha, *c;
-unsigned int i;
-i = 0;
+	listint_t *tortoise, *hare;
 
-if (head == NULL || *head == NULL)
-return (-1);
-
-cha = *head;
-c = NULL;
-
-for (; i < index; i++)
-{
-if (cha == NULL)
-return (-1);
-c = cha;
-cha = cha->next;
-}
-
-if (c == NULL)
-*head = cha->next;
-else
-c->next = cha->next;
-
-free(cha);
-
-return (1);
+	tortoise = hare = head;
+	while (tortoise && hare && hare->next)
+	{
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
+		{
+			tortoise = head;
+			break;
+		}
+	}
+	if (!tortoise || !hare || !hare->next)
+		return (NULL);
+	while (tortoise != hare)
+	{
+		tortoise = tortoise->next;
+		hare = hare->next;
+	}
+	return (hare);
 }
