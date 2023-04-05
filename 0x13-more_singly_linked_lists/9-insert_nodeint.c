@@ -3,7 +3,6 @@
 
 /**
  * *insert_nodeint_at_index - Realease the memory allocated for a list
- *
  * @head: A pointer to the first node of the list to free
  * @idx: get integer number
  * @n: number the first node
