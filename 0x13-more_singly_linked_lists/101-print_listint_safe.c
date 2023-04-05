@@ -1,42 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
-#include <stdlib.h>
-#include <stdlib.h>
-#include <string.h>
 
 /**
- * *delete_nodeint_at_index - Realease the memory allocated for a list
- *
- * @head: A pointer to the first node of the list to free
- * @index: get integer number
- * Return: node
- */
+* print_listint_safe - a function that prints a listint_t linked list.
+* @head: a linked_list
+* Return: a structure to a linked_list
+**/
 
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
+size_t print_listint_safe(const listint_t *head)
 {
-listint_t *cha, *c;
-unsigned int i;
-i = 0;
+size_t count = 0;
+const listint_t *temp;
 
-if (head == NULL || *head == NULL)
-return (-1);
-
-cha = *head;
-c = NULL;
-
-for (; i < index; i++)
+while (head != NULL)
 {
-if (cha == NULL)
-return (-1);
-c = cha;
-cha = cha->next;
+printf("[%p] %d\n", (void *)head, head->n);
+count++;
+temp = head;
+head = head->next;
+if (temp <= head)
+{
+printf("-> [%p] %d\n", (void *)head, head->n);
+break;
 }
-
-if (c == NULL)
-*head = cha->next;
-else
-c->next = cha->next;
-
-free(cha);
-
-return (1);
+}
+return (count);
 }
