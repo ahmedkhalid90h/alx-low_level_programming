@@ -2,37 +2,39 @@
 #include <stdlib.h>
 
 /**
- * *insert_nodeint_at_index - Realease the memory allocated for a list
- * @head: A pointer to the first node of the list to free
- * @idx: get integer number
- * @n: number the first node
- * Return: node
+ * insert_nodeint_at_index - inserts a new node at a given position
+ * @head: pointer to the head of the list
+ * @idx: index of the list where the new node should be added
+ * @n: data to be added to the new node
+ * Return: the address of the new node, or NULL if it failed
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-listint_t *cha;
-listint_t *new_node;
-cha = *head;
-new_node = malloc(sizeof(listint_t));
+	listint_t *new, *tmp;
+	unsigned int i = 0;
 
-if (new_node == NULL)
-return (NULL);
-
-new_node->n = n;
-
-if (idx == 0)
-{
-new_node->next = *head;
-*head = new_node;
-return (new_node);
-}
-
-for (; idx != 1; idx--)
-cha = cha->next;
-
-new_node->next = cha->next;
-cha->next = new_node;
-
-return (new_node);
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	if (idx == 0)
+	{
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
+	tmp = *head;
+	while (tmp != NULL)
+	{
+		if (i == idx - 1)
+		{
+			new->next = tmp->next;
+			tmp->next = new;
+			return (new);
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	free(new);
+	return (NULL);
 }
