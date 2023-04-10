@@ -14,34 +14,19 @@ int fCheck, len = 0;
 
 
 if (filename == NULL)
-
-
-    return (-1);
+return (-1);
 
 fCheck = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
 if (fCheck == -1)
-
-
-    return (-1);
+return (-1);
 
 if (text_content != NULL)
-
 {
-
-
-    while (text_content[len])
-
-
-    
-        len++;
-
-
-    write(fCheck, text_content, len);
-
+while (text_content[len])
+len++;
+write(fCheck, text_content, len);
 }
-
 close(fCheck);
-
 return (1);
 }
