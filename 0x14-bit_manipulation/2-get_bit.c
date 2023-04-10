@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_binary - prints all the elements of a linked list
+ * get_bit - prints all the elements of a linked list
  * @n: linked list of type listint_t to print
  * @index: linked list of type listint_t to print
  * Return: number
