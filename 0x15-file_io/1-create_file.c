@@ -1,14 +1,15 @@
 #include "main.h"
 
 /**
- * print_binary - prints all the elements of a linked list
+ * get_bit - prints all the elements of a linked list
  * @n: linked list of type listint_t to print
+ * @index: linked list of type listint_t to print
  * Return: number
  */
 
-void print_binary(unsigned long int n)
+int get_bit(unsigned long int n, unsigned int index)
 {
-if (n > 1)
-print_binary(n >> 1);
-putchar((n & 1) + '0');
+if (index > sizeof(n) * 8)
+return (-1);
+return ((n >> index) & 1);
 }
